@@ -1,23 +1,21 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+
+import IndexPage from "@/pages/index";
+import DocsPage from "@/pages/docs";
+import PricingPage from "@/pages/pricing";
+import BlogPage from "@/pages/blog";
+import AboutPage from "@/pages/about";
 
 function App() {
-  const [users, setUsers] = useState([])
-  useEffect(()=> {
-    // if you don't understand below code, try to research how JS promises works
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-    fetch('http://localhost:3000/api/users', { method: 'get' })
-    .then(res => res.json())
-    .then((data) => setUsers(data.clients))
-  }, [])
   return (
-    <>
-      <h1>Welcome to Ojo de agua management</h1>
-      <ul>
-        {users.map(user => <li key={user.name}>{user.name}</li>)}
-      </ul>
-    </>
-  )
+    <Routes>
+      <Route element={<IndexPage />} path="/" />
+      <Route element={<DocsPage />} path="/docs" />
+      <Route element={<PricingPage />} path="/pricing" />
+      <Route element={<BlogPage />} path="/blog" />
+      <Route element={<AboutPage />} path="/about" />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
