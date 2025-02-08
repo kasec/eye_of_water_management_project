@@ -2,14 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Our application will be split into:",
+  "engines": { "node": ">=20" },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node --env-file=.env index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
     "express": "^4.21.2"
   }
 }
