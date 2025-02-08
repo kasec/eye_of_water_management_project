@@ -1,0 +1,14 @@
+{
+  "name": "eye_of_water_management_project",
+  "version": "1.0.0",
+  "description": "Our application will be split into:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
